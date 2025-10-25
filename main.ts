@@ -15,7 +15,7 @@ const arr = csvParse(csv) as {
 
 const html = arr.map((el) => {
   return (
-    `<b>${el.kanji}</b></br>
+    `${el.kanji}
     <span>keyword: ${el.keyword_5th_ed} ${
       el.keyword_5th_ed !== el.keyword_6th_ed ? ` k6: ${el.keyword_6th_ed}` : ""
     }</span></br>

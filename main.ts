@@ -14,12 +14,17 @@ const arr = csvParse(csv) as {
 }[];
 
 const html = arr.map((el) => {
+  const c = el.components.split(';').map(component => {
+    const found5 = arr.find(it => it.keyword_5th_ed === component)
+    const found6 = arr.find(it => it.keyword_5th_ed === component)
+    return `${component}${ found5 ? ` (${found5.kanji})` : found6 ? ` (${found6.kanji})` : '' }`
+  }).join(';')
   return (
     `${el.kanji}
     <span>keyword: ${el.keyword_5th_ed} ${
       el.keyword_5th_ed !== el.keyword_6th_ed ? ` k6: ${el.keyword_6th_ed}` : ""
     }</span></br>
-    ${el.components ? `<span>components: ${el.components}</span></br>` : ''}
+    ${el.components ? `<span>components: ${c}</span></br>` : ''}
     ${el.on_reading ? `<span>on: ${el.on_reading}</span></br>` : ''}
     ${el.kun_reading ? `<span>kun: ${el.kun_reading}</span></br>`: ''}
     <span>id: ${el.id_5th_ed} ${

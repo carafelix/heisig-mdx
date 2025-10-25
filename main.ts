@@ -20,8 +20,8 @@ const html = arr.map((el) => {
       el.keyword_5th_ed !== el.keyword_6th_ed ? ` k6: ${el.keyword_6th_ed}` : ""
     }</span></br>
     ${el.components ? `<span>components: ${el.components}</span></br>` : ''}
-    ${el.on_reading ? `<span>on:${el.on_reading}</span></br>` : ''}
-    ${el.kun_reading ? `<span>kun:${el.kun_reading}</span></br>`: ''}
+    ${el.on_reading ? `<span>on: ${el.on_reading}</span></br>` : ''}
+    ${el.kun_reading ? `<span>kun: ${el.kun_reading}</span></br>`: ''}
     <span>id: ${el.id_5th_ed} ${
       el.id_5th_ed !== el.id_6th_ed ? ` id6: ${el.id_6th_ed}` : ""
     }</span></br>
